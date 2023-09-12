@@ -1,4 +1,4 @@
-module github.com/ndragon70/cli/v2
+module github.com/urfave/cli/v2
 
 go 1.18
 
