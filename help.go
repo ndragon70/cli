@@ -448,7 +448,9 @@ func checkCompletions(cCtx *Context) bool {
 	if !cCtx.shellComplete {
 		return false
 	}
-
+	if cCtx.Args() == nil {
+		return false
+	}
 	if args := cCtx.Args(); args.Present() {
 		name := args.First()
 		if cmd := cCtx.Command.Command(name); cmd != nil {

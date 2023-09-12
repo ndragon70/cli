@@ -164,6 +164,9 @@ func (cCtx *Context) Value(name string) interface{} {
 
 // Args returns the command line arguments associated with the context.
 func (cCtx *Context) Args() Args {
+	if cCtx.flagSet == nil {
+		return nil
+	}
 	ret := args(cCtx.flagSet.Args())
 	return &ret
 }
